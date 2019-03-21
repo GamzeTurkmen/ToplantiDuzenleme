@@ -1,0 +1,34 @@
+﻿
+
+@{
+    ViewBag.Title = "TumKatilimcilar";
+}
+
+<h2>Tüm Katılımcılar</h2>
+
+@*<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/modernizr-2.8.3.js"></script>*@
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<input type="button" id="KatilimciListe" value="Katılımcıları Listele" />
+<div id="katilimci">
+
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#KatilimciListe").click(function () {
+            $.getJSON('../api/katilimci').done(function (veri) {
+
+                var katilimcilar = "";
+                $.each(veri, function (key, katilimci) {
+                    katilimcilar += katilimci.Ad + " " + katilimci.Soyad + "<br>";
+                });
+                $("#katilimci").html(katilimcilar);
+            })
+        });
+    })
+
+</script>
+
+

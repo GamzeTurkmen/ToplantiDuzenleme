@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "TumToplantilar";
+}
+
+<h2>TumToplantilar</h2>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<input type="button" id="ToplantiListe" value="Toplantıları Listele" />
+<div id="toplanti">
+
+</div>
+
+@*<script>
+    $(document).ready(function () {
+        $("#ToplantiListe").click(function () {
+            $.getJSON('../api/toplanti').done(function (veri) {
+
+                var toplantilar = "";
+                $.each(veri, function (key, toplanti) {
+                    toplantilar += toplanti + " " + toplanti.Soyad + "<br>";
+                });
+                $("#toplanti").html(toplantilar);
+            })
+        });
+    })
+
+</script>*@

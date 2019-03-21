@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Meeting.Models.Toplanti>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<p>
+    @Html.ActionLink("Toplantı Ekle", "Create")
+</p>
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Konu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.T_Tarih)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BaslangicSaat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BitisSaat)
+        </th>
+        <th>  </th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Konu)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T_Tarih)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BaslangicSaat)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BitisSaat)
+                </td>
+
+
+                <td>
+
+
+                    @Html.ActionLink("Düzenle", "Edit", new { id = item.ID }, new { @class = "btn btn-primary" }) |
+                    @Html.ActionLink("Ayrıntılar", "Details", new { id = item.ID }, new { @class = "btn btn-success" }) |
+                    @Html.ActionLink("Sil", "Delete", new { id = item.ID }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

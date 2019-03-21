@@ -1,0 +1,50 @@
+﻿@model Meeting.Models.Toplanti
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Toplanti</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Konu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Konu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.T_Tarih)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.T_Tarih)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BaslangicSaat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BaslangicSaat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BitisSaat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BitisSaat)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
